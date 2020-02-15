@@ -2,6 +2,7 @@ package top.xiesen.analy.util;
 
 import java.sql.Timestamp;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -60,5 +61,30 @@ public class DateUtils {
         String nowTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);
         Timestamp timestamp = Timestamp.valueOf(nowTime);
         return timestamp;
+    }
+
+
+    public static int getDaysBetweenByStartAndEnd(String startTime, String endTime, String dateFormatString) throws ParseException {
+        DateFormat dateFormat = new SimpleDateFormat(dateFormatString);
+        Date start = dateFormat.parse(startTime);
+        Date end = dateFormat.parse(endTime);
+        Calendar startCalendar = Calendar.getInstance();
+        Calendar endCalendar = Calendar.getInstance();
+        startCalendar.setTime(start);
+        endCalendar.setTime(end);
+        int days = 0;
+        while (startCalendar.before(endCalendar)) {
+            startCalendar.add(Calendar.DAY_OF_YEAR, 1);
+            days += 1;
+        }
+        return days;
+    }
+
+    public static String getHoursByDate(String timeValue) throws ParseException {
+        DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd hhmmss");
+        Date time = dateFormat.parse(timeValue);
+        dateFormat = new SimpleDateFormat("hh");
+        String resultHour = dateFormat.format(time);
+        return resultHour;
     }
 }
