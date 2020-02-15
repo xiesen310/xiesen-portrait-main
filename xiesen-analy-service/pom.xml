@@ -87,5 +87,12 @@
             <artifactId>lucene-core</artifactId>
             <version>4.2.0</version>
         </dependency>
+
+        <dependency>
+            <artifactId>xiesen-common</artifactId>
+            <groupId>top.xiesen</groupId>
+            <version>1.0.0</version>
+        </dependency>
+
     </dependencies>
 </project>

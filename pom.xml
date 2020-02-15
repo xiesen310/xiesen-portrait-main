@@ -11,6 +11,8 @@
     <modules>
         <module>xiesen-analy-service</module>
         <module>xiesen-register-center</module>
+        <module>xiesen-common</module>
+        <module>xiesen-info-service</module>
     </modules>
 
 
