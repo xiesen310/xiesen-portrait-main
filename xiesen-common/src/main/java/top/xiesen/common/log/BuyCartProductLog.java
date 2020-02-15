@@ -49,4 +49,9 @@ public class BuyCartProductLog implements Serializable {
      * 用户ip
      */
     private String ip;
+
+    /**
+     * 品牌
+     */
+    private String brand;
 }

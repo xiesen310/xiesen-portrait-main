@@ -48,4 +48,8 @@ public class ScanProductLog implements Serializable {
      */
     private String ip;
 
+    /**
+     * 品牌
+     */
+    private String brand;
 }
