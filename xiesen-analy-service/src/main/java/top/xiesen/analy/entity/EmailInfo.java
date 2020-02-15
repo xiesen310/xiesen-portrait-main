@@ -3,18 +3,18 @@ package top.xiesen.analy.entity;
 import lombok.Data;
 
 /**
- * @Description 运行商实体
- * @className top.xiesen.analy.entity.CarrierInfo
+ * @Description email 实体
+ * @className top.xiesen.analy.entity.EmailInfo
  * @Author 谢森
  * @Email xiesen310@163.com
- * @Date 2020/2/15 9:36
+ * @Date 2020/2/15 10:51
  */
 @Data
-public class CarrierInfo {
+public class EmailInfo {
     /**
-     * 运行商
+     * email 类型
      */
-    private String carrier;
+    private String emailType;
 
     /**
      * 数量
@@ -25,5 +25,4 @@ public class CarrierInfo {
      * 分组字段
      */
     private String groupField;
-
 }

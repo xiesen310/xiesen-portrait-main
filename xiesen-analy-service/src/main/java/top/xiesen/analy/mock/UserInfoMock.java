@@ -66,6 +66,28 @@ public class UserInfoMock {
         return result;
     }
 
+    /**
+     * * 网易邮箱 @163.com @126.com
+     * * 移动邮箱 @139.com
+     * * 搜狐邮箱 @sohu.com
+     * * qq邮箱  @qq.com
+     * * 189邮箱 @189.cn
+     * * tom邮箱 @tom.com
+     * * 阿里邮箱 @aliyun.com
+     * * 新浪邮箱 @sina.com
+     * * 等等
+     *
+     * @return
+     */
+    private static String getRandomEmail() {
+        Random random = new Random();
+        String[] emailSuffix = {"@163.com", "@126.com", "@139.com", "@sohu.com", "@qq.com", "@189.cn",
+                "@tom.com", "@aliyun.com", "@sina.com"};
+        String suffix = emailSuffix[random.nextInt(emailSuffix.length - 1)];
+        String email = getNum() + getNum() + suffix;
+        return email;
+    }
+
     private static String mockUserInfo() {
         Random random = new Random();
         String[] names = {"Ada", "Addie", "Abbey", "Adela", "Adeline", "Adele"};
@@ -79,7 +101,7 @@ public class UserInfoMock {
         String username = names[random.nextInt(names.length - 1)];
         int sex = 0;
         String telPhone = getRandomTelPhone();
-        String email = username + "@163.com";
+        String email = getRandomEmail();
         int age = (int) (Math.random() * 90 + 10);
         Timestamp registerTime = DateUtils.getCurrentTimestamp();
         int userType = userTypes[random.nextInt(userTypes.length - 1)];
@@ -95,5 +117,6 @@ public class UserInfoMock {
             FileUtils.writerFile(file, output + "\n");
         }
 //        System.out.println(getRandomTelPhone());
+//        System.out.println(getRandomEmail());
     }
 }
